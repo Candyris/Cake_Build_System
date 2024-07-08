@@ -1,0 +1,18 @@
+complie
+{
+    include(header1.hpp)
+    include(header2.hpp)
+    include(header3.hpp)
+    include(header4.hpp)
+    
+    include( game/*.hpp) // something like this to include all files
+    
+    srcfile(source1.cpp)
+    srcfile(source2.cpp)
+    srcfile(source3.cpp)
+    srcfile(source4.cpp)
+    
+    or maybe 
+
+    srcfile(*.cpp) // something like this to include all files
+}
