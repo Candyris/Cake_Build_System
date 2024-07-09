@@ -1,4 +1,4 @@
-complie
+compile
 {
     include(header1.hpp)
     include(header2.hpp)
@@ -15,4 +15,11 @@ complie
     or maybe 
 
     srcfile(*.cpp) // something like this to include all files
+}
+linker
+{
+
+}
+output{
+
 }

@@ -1,26 +1,17 @@
-namespace compileScope
+#pragma once
+#include <string>
+#include <vector>
+namespace Candy
 {
-    enum TokenType
+    namespace Token{
+    using Tokens = std::vector<std::string>;
+    struct Value 
     {
-        include,
-        srcfile,
+        Value(std::string _key,std::string _value) : key(_key),value(_value){}
+        std::string key;
+        std::string value;
     };
-};
-namespace linkerScope
-{
-    enum TokenType
-    {
-        link_lib,
-        link_spefic
+    using TokenValue = std::vector<Value>;
     };
+    
 };
-namespace outputScope
-{
-    enum TokenType
-    {
-        outfile // rest for other time
-    };
-};
-
-// additional for later
-

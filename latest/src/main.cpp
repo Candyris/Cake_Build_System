@@ -2,11 +2,12 @@
 #include "../include/cake.hpp"
 
 
-void printTokens(Candy::Tokens tokens)
+void printTokens(Candy::Token::Tokens tokens)
 {
     std::cout <<"\n--------------Tokens Lists-------------------\n";
     for(auto token : tokens)
-        std::cout<<token<<std::endl;
+        std::cout<<token<<",";
+    std::cout<<std::endl;
     std::cout<<"---------------------------end-------------------------\n";
 }
 
@@ -15,13 +16,13 @@ int main(int argc, char** argv)
     std::cout<<"File Name : ";
     std::cout<<argv[1];
 
-    std::string filecode = Candy::FileManger::loadStringFromfile(argv[1]);
-
-    std::cout <<"\n--------------File context-------------------\n";
-    std::cout<<filecode<<std::endl;
-    std::cout<<"---------------------------end-------------------------\n";
+    // loading text from file 
+    std::string filecode = Candy::FileManger::loadStringFromfile(argv[1]); 
 
     printTokens(Candy::Tokenizer(filecode.c_str()));
+
+    Candy::Parser paser(Candy::Tokenizer(filecode.c_str()));
+    paser.printCompileCollection();
     
     std::cin.get();
 

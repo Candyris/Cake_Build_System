@@ -1,16 +1,1 @@
-Goal of the video 
-
-[Hello in this video I will cover this 😅😅]
-
-1 -> i will load file context in c++ // :) done
-2 -> i will token the value  done 😓😓
-3-> c++ something like 
-    ( type and value -> srcfile: string<key> ( any.cpp : string<value>))
-
-
-
-
-// ok thanks for watching this video next i will fix this tokeners and parser 😁😁
-
-
-T
+Thanks for watching this Video 😁😁😁😁🎂🎂

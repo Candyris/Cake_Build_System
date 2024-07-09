@@ -3,9 +3,8 @@
 #include <vector>
 #include <string>
 
+
 namespace Candy
-{
-    using Tokens = std::vector<std::string>;
-    
-    Tokens Tokenizer(const char* string);
+{   
+    Token::Tokens Tokenizer(const char* string);
 }
