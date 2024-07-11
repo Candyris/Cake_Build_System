@@ -7,17 +7,15 @@
 #include <iostream>
 namespace Candy
 {
-    struct collection 
+     struct collection 
     {
         std::string token_type;
         std::vector<Candy::Token::Value> value;
-        std::vector<Token::Value>::iterator it;
-        void incrementIT(){it++;}
         void log()
         {
-            for (std::vector<Token::Value>::iterator iter = value.begin(); iter != value.end() ; iter++)
+            for (Token::Value val : value)
             {
-                std::cout<<"key : "<<iter->first << " , value : "<<iter->second <<std::endl;
+                std::cout<<"key : "<<val.key << " , value : "<<val.value <<std::endl;
             }
         }
     };

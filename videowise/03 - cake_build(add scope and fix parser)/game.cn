@@ -1,6 +1,6 @@
 compile
 {
-    include(header1.hpp)
+    include_dir(header/header1.hpp)
     include(header2.hpp)
     include(header3.hpp)
     include(header4.hpp)
@@ -18,8 +18,8 @@ compile
 }
 linker
 {
-
+    attach(glfw)
 }
 output{
-
+    outfile(app);
 }

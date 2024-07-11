@@ -48,8 +48,3 @@ cake -pre-bake Game
 cake -baked Game
 if success >> cake Baked :) {color green}
 if failure >> cake Burned !! {color red}
-
-
-future 
-
-add defines , rawlink 

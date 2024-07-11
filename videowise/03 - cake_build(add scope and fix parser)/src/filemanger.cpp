@@ -1,8 +1,7 @@
-#pragma once
 #include "../include/filemanger.hpp"
 #include <fstream>
 #include <string>
-#include <string.h>
+
 namespace Candy
 {
  std::string FileManger::loadStringFromfile(const char* file)
@@ -19,13 +18,3 @@ namespace Candy
     return filecode;
  }
 };
-
-
-
-void Candy::FileManger::createFileWithContext(const char *filename, const char *context)
-{
-    std::ofstream outfile;
-    outfile.open(filename);
-    outfile.write(context,strlen(context));
-    outfile.close();
-}
