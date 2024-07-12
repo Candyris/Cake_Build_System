@@ -1,0 +1,55 @@
+
+something like this->
+
+complie
+{
+    include(header1.hpp)
+    include(header2.hpp)
+    include(header3.hpp)
+    include(header4.hpp)
+    
+    include( game/*.hpp) // something like this to include all files
+    
+    srcfile(source1.cpp)
+    srcfile(source2.cpp)
+    srcfile(source3.cpp)
+    srcfile(source4.cpp)
+    
+    or maybe 
+
+    srcfile(*.cpp) // something like this to include all files
+}
+
+linker
+{
+    SDLmain.lib,glfw.lib,some.lib
+}
+
+output
+{
+    outfile(bin/debug/Game.exe)
+}
+
+additional
+{
+    optimize = o3
+    std = 17
+    warning = False
+
+}
+
+this how my file system going to using this building system
+
+Which i will write in c++
+
+cmd / powershell lines:-
+
+cake -pre-bake Game
+cake -baked Game
+if success >> cake Baked :) {color green}
+if failure >> cake Burned !! {color red}
+
+
+future 
+
+add defines , rawlink 

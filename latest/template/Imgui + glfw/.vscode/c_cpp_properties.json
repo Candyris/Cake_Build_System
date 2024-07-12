@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "windows-gcc-x64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/directory/include/**",
+                "${workspaceFolder}/directory/include//**",
+                "C:\\Users\\risha\\Desktop\\multi-Thread\\setup\\Imgui__glfw\\directory\\include\\IMGUI"
+            ],
+            "compilerPath": "C:/MinGW/ucrt64/bin/gcc.exe",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerArgs": [
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
