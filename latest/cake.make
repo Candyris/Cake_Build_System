@@ -1,0 +1,13 @@
+ compile
+{
+    include_dir(include)
+    srcfile(main.cpp)
+   }
+linker
+{
+    link_dir(directory/lib)
+    attach(kernel32)
+}
+output{
+    outfile(app);
+}

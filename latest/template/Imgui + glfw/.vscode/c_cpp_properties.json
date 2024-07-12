@@ -5,8 +5,6 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/directory/include/**",
-                "${workspaceFolder}/directory/include//**",
-                "C:\\Users\\risha\\Desktop\\multi-Thread\\setup\\Imgui__glfw\\directory\\include\\IMGUI"
             ],
             "compilerPath": "C:/MinGW/ucrt64/bin/gcc.exe",
             "cStandard": "${default}",

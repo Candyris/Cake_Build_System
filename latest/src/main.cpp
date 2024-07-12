@@ -21,7 +21,7 @@ int main(int argc, char **argv)
             buildsystem.LoadFile(CAKEBUILD_FILEPATH);
             buildsystem.generateToken();
             buildsystem.generateCommand();
-            buildsystem.runCommand("g++"," -mwindows");
+            buildsystem.runCommand("g++"," -mwindows -O3 -std=c++20");
             std::cout << "[APPLICATION BAKED]\n";
         }
         else if (mode2 == "console")
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
             buildsystem.LoadFile(CAKEBUILD_FILEPATH);
             buildsystem.generateToken();
             buildsystem.generateCommand();
-            buildsystem.runCommand("g++");
+            buildsystem.runCommand("g++"," -O3 -std=c++20");
             std::cout << "[CONSOLE BAKED]\n";
         }
     }
