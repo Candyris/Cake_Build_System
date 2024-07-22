@@ -27,45 +27,50 @@ namespace Candy::ReservedCollection
         "attach"};
     Token::Tokens Output{
         "outfile"};
+    Token::Tokens global{
+        "cxx",
+        "std",
+        "optimize",
+        "define"};
 };
 #pragma endregion
 
 void Candy::BuildSystem::LoadFile(const char* filepath)
 {
-    m_Filecode = Candy::FileManger::loadStringFromfile(filepath); //working 
+    m_Filecode = Candy::FileManger::loadStringFromfile(filepath); 
     //std::cout<<"file code :"<<m_Filecode<<std::endl;
 }
 
-void Candy::BuildSystem::generateToken()
+void Candy::BuildSystem::generateToken() 
 {
-    Candy::Token::Tokens tokens = Candy::Tokenizer(m_Filecode.c_str()); // working 
-    m_CompileCollection = Candy::Parser(tokens, ReservedCollection::Compile,"compile"); // working
-    m_LinkerCollection = Candy::Parser(tokens, ReservedCollection::Linker, "linker"); // working 
-    m_OutputCollection = Candy::Parser(tokens, ReservedCollection::Output, "output"); // working
+    Candy::Token::Tokens tokens = Candy::Tokenizer(m_Filecode.c_str()); 
+
+    m_GlobalCollection = Candy::ParserKeyword(tokens,ReservedCollection::global,"global");
+    m_CompileCollection = Candy::ParserFuntion(tokens, ReservedCollection::Compile,"compile"); 
+    m_LinkerCollection = Candy::ParserFuntion(tokens, ReservedCollection::Linker, "linker"); 
+    m_OutputCollection = Candy::ParserFuntion(tokens, ReservedCollection::Output, "output"); 
 
     // print collections
-    // printCollection(compileCollection, "compile ");
-    // printCollection(linkerCollection, "linker ");
-    // printCollection(outputCollection, "output ");
-
+    // printCollection(m_GlobalCollection,"global");
+    // printCollection(m_CompileCollection, "compile ");
+    // printCollection(m_LinkerCollection, "linker ");
+    // printCollection(m_OutputCollection, "output ");
 }
 
-void Candy::BuildSystem::generateCommand()
+void Candy::BuildSystem::generateCommand() 
 {
     Candy::Scope scope;
-    
-    scope.genCompileCmd(m_CompileCollection); // working
-    scope.genLinkerCmd (m_LinkerCollection); // working
-    scope.genOutputCmd (m_OutputCollection); // working 
-    m_CommandPrompt = scope.getCmd(); // working
-    std::cout<<"cmd generated: "<< scope.getCmd()<<"end\n";
+    scope.genGlobalCmd(m_GlobalCollection); 
+    scope.genCompileCmd(m_CompileCollection); 
+    scope.genLinkerCmd (m_LinkerCollection); 
+    scope.genOutputCmd (m_OutputCollection); 
+    m_CommandPrompt = scope.getCmd(); 
 }
 
-void Candy::BuildSystem::runCommand(const char *CompileName,const char *link )
+void Candy::BuildSystem::runCommand(const char *link )
 {
-    std::cout<<" cmd " << m_CommandPrompt<<"\n";
-    std::string _name = CompileName;
     std::string _link = link;
-    system((_name + m_CommandPrompt + _link).c_str());
-    std::cout<<"final"<<(_name + m_CommandPrompt + _link).c_str()<<std::endl;
+    std::cout<<"[CODE GERNERATED] : ";
+    std::cout<<m_CommandPrompt + _link<<std::endl;
+    system((m_CommandPrompt + _link).c_str());
 }

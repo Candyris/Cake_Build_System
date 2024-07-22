@@ -1,3 +1,10 @@
+global
+{
+cxx : g++
+std : 17
+optimize : 3
+define : NDEBUG
+}
  compile
 {
     include_dir(directory/include)
@@ -15,3 +22,4 @@ linker
 output{
     outfile(bin/app);
 }
+

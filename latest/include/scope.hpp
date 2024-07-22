@@ -9,13 +9,14 @@ namespace Candy
         Scope() = default;
         ~Scope() = default;
 
-        void genCompileCmd(const Candy::collection compileCollection);
-        void genLinkerCmd(const Candy::collection linkerCollection);
-        void genOutputCmd(const Candy::collection outputCollection);
-
+        void genGlobalCmd( Candy::collection globalCollection);
+        void genCompileCmd( Candy::collection compileCollection);
+        void genLinkerCmd( Candy::collection linkerCollection);
+        void genOutputCmd( Candy::collection outputCollection);
         std::string getCmd();
 
     private:
+        std::string m_globalCommand;
         std::string m_complieCommand;
         std::string m_linkerCommand;
         std::string m_outputCommand;

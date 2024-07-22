@@ -26,7 +26,8 @@ namespace Candy
 namespace Candy
 {
    
-    collection Parser (Token::Tokens tokens , Candy::Token::Tokens reservedtokencollection, std::string ScopeTarget);
+    collection ParserFuntion (Token::Tokens tokens , Candy::Token::Tokens reservedtokencollection, std::string ScopeTarget);
+    collection ParserKeyword (Token::Tokens tokens , Candy::Token::Tokens reservedtokencollection, std::string ScopeTarget);
    
 };
 

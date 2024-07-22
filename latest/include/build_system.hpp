@@ -12,10 +12,11 @@ namespace Candy
         void LoadFile(const char* filepath);
         void generateToken();
         void generateCommand();
-        void runCommand(const char* CompileName,const char *link= "");
+        void runCommand(const char *link= "");
         private:
         std::string m_CommandPrompt;
         std::string m_Filecode;
+        collection m_GlobalCollection;
         collection m_CompileCollection;
         collection m_LinkerCollection;
         collection m_OutputCollection;

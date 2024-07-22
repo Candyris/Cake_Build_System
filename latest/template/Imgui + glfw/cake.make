@@ -1,4 +1,11 @@
- compile
+global
+{
+cxx : g++
+std : 17
+optimize : 3
+define : NDEBUG
+}
+compile
 {
     include_dir(directory/include)
     include_dir(directory/include/IMGUI)

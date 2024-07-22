@@ -1,15 +1,23 @@
 #pragma once 
-const char* DEFAULT_CONTEXT = 
-    " compile\n"
+const char* DEFAULT_CONTEXT =
+    "global\n"
+    "{\n"
+    "cxx : g++\n"
+    "std : 17\n"
+    "optimize : 3\n"
+    "define : NDEBUG\n"
+    "}\n"
+    "compile\n"
     "{\n"
     "    include_dir(include)\n"
     "    srcfile(main.cpp)\n"
-    "   }\n"
+    "}\n"
     "linker\n"
     "{\n"
     "    link_dir(directory/lib)\n"
     "    attach(kernel32)\n"
     "}\n"
-    "output{\n"
+    "output\n"
+    "{\n"
     "    outfile(app);\n"
     "}\n";
