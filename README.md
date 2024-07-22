@@ -31,8 +31,8 @@ for [raylib] template
 
 for opengl use [glfw + glad] template
 {
- for this You use any "cake build console" for termernal attach 
- and  this You use any "cake build app" for not terminal attach 
+ for this You use any "cake bake console" for termernal attach 
+ and  this You use any "cake bake app" for not terminal attach 
 }
 
 Thanks for watching this video 😆😆😆😆😁😁
